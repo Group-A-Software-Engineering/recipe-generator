@@ -9,8 +9,11 @@ Overview
 Features
 
   1. Target Market
+
     College Students: We understand the unique needs of college students, such as budget-friendly and quick recipes.
+    
     General Population: A broad range of recipes catering to various tastes, diets, and culinary skills.
+    
   3. Search Bar
     Easily search for recipes using keywords, ingredients, or dietary preferences.
     Filter results based on calorie count, dietary needs, or specific ingredients.
