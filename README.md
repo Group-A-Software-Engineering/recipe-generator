@@ -184,7 +184,7 @@
 
 
     
-    Enjoy cooking with the Recipe Generator! We hope our platform helps you find inspiration, stay healthy, and enjoy delicious meals. Happy cooking! 🍽️
+    Enjoy cooking with the Recipe Generator! We hope our platform helps you find inspiration, stay healthy, and enjoy delicious meals. Happy cooking!
 
 
     Chat GPT 4o was used in the creation of this readme. 
