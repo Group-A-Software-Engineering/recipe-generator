@@ -15,30 +15,31 @@ Features
         General Population: A broad range of recipes catering to various tastes, diets, and culinary skills.
     
   3. Search Bar
+
     Easily search for recipes using keywords, ingredients, or dietary preferences.
     Filter results based on calorie count, dietary needs, or specific ingredients.
-  4. Calorie Counter
+  5. Calorie Counter
     Track your caloric intake with each recipe.
     Adjust serving sizes to see the impact on calorie consumption.
     Get meal suggestions based on your desired caloric intake.
-  5. Desktop Website
+  6. Desktop Website
     Fully responsive desktop website for an optimal experience on larger screens.
     User-friendly interface with easy navigation and clear visuals.
-  6. API Search with Images
+  7. API Search with Images
     Utilize API integration to search for recipes with high-quality images.
     Get detailed recipe information including nutrition facts, ingredients, and cooking instructions.
-  7. Nutrition Information
+  8. Nutrition Information
     Detailed nutritional breakdown for each recipe, including:
     Serving Size
     Calories
     Fat
     Carbs
     Protein
-  8. Random Meal Generator
+  9. Random Meal Generator
     Discover new meals with a single click.
     Get detailed directions on how to create the suggested recipe.
     Perfect for when you’re unsure what to cook!
-  9. Diet Types
+  10. Diet Types
     Filter recipes based on dietary preferences such as:
     Vegetarian
     Vegan
@@ -46,27 +47,27 @@ Features
     Keto
     Paleo
     And more!
-  10. Filter by Ingredient
+  11. Filter by Ingredient
     Search for recipes by including or excluding specific ingredients.
     Ideal for using up leftovers or avoiding allergens.
-  11. Online Shopping
+  12. Online Shopping
     Integrated online shopping for ingredients.
     Add ingredients from recipes directly to your shopping cart.
     Choose from various online grocery stores for convenience.
-  12. Save Recipes
+  13. Save Recipes
     Create a personal collection of your favorite recipes.
     Save recipes for future reference with one click.
-  13. Meal Suggestions Based on Desired Caloric Intake
+  14. Meal Suggestions Based on Desired Caloric Intake
     Get personalized meal suggestions that align with your caloric goals.
     Plan your meals for the day, week, or month with ease.
-  14. Recipe Review Section
+  15. Recipe Review Section
     Read reviews and comments from other users.
     See the number of reviews to gauge the popularity of a recipe.
     Leave your own review and rate recipes you've tried.
-  15. Adding Guest Outcome of Recipe via Pictures and Videos
+  16. Adding Guest Outcome of Recipe via Pictures and Videos
     Share your experience by uploading pictures or videos of your cooking outcome.
     View and be inspired by the creations of others.
-  16. Include Reviews, Comments, and # of Reviews
+  17. Include Reviews, Comments, and # of Reviews
     Detailed review section where users can leave feedback.
     See at a glance how many others have reviewed the recipe.
     Engage with the community by responding to comments.
