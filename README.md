@@ -4,7 +4,7 @@
     
     Overview
     
-        Welcome to the Recipe Generator! This platform is designed to make meal planning and cooking easier and more enjoyable for everyone, especially for college students and the general population. 
+        Welcome to our Recipe Generator! This platform is designed to make meal planning and cooking easier and more enjoyable for everyone, especially for college students and the general population. 
         Whether you're searching for new recipes, tracking your caloric intake, or looking for meal suggestions that fit your dietary preferences, our Recipe Generator has you covered. 
         Our tool provides a comprehensive set of features that will help you discover, create, and enjoy delicious meals, all while keeping your nutritional goals in check.
 
