@@ -187,4 +187,4 @@
     Enjoy cooking with the Recipe Generator! We hope our platform helps you find inspiration, stay healthy, and enjoy delicious meals. Happy cooking!
 
 
-    Chat GPT 4o was used in the creation of this readme. 
+Need to include: Pre-requisites for incoming SWE's (HTML version, type of language, etc.); clarify the strategy we use to review and finalize code.
