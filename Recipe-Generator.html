@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recipe Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+        }
+        #header {
+            font-size: 48px;
+            margin-bottom: 50px;
+        }
+        #searchBar {
+            width: 300px;
+            height: 35px;
+            font-size: 16px;
+            padding: 5px;
+        }
+        #searchButton {
+            height: 47px;
+            font-size: 16px;
+            padding: 5px 15px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="header">RECIPE-GENERATOR</div>
+    <input type="text" id="searchBar" placeholder="Search for a recipe...">
+    <button id="searchButton">Search</button>
+
+    <script>
+        document.getElementById('searchButton').addEventListener('click', function() {
+            var query = document.getElementById('searchBar').value;
+            // This is where you would handle the search query
+            console.log('User searched for: ' + query);
+            // For demonstration, we'll display the query on the page
+            alert('You searched for: ' + query);
+        });
+    </script>
+
+</body>
+</html>
