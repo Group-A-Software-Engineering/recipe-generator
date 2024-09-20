@@ -152,6 +152,7 @@
 
         Knowlege on Git for version control and team collaboration(branching, merging, and pull requests).
 
+
     Code Review and finalization strategy
 
         Pull request, Each change will be submitted via pull request with a description of changes.
@@ -159,6 +160,7 @@
         Testing, Ensure all code changes are tested thoroughly.
         Merging, After code is approved, it can then be merged into the main branch, ensuring there 
         is no merge conflict, then tested on the main branch.
+        
       
       Installation
       
