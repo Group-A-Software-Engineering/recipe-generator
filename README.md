@@ -145,6 +145,20 @@
         
         Internet connection for accessing the website and online features.
 
+
+    Prerequisites for incoming SWE's   
+
+        Programing languages, Knowledge on Java, CSS, and HTML.
+
+        Knowlege on Git for version control and team collaboration(branching, merging, and pull requests).
+
+    Code Review and finalization strategy
+
+        Pull request, Each change will be submitted via pull request with a description of changes.
+        Code review, Code must be reviewed by one other team member, looking for issues or bugs.
+        Testing, Ensure all code changes are tested thoroughly.
+        Merging, After code is approved, it can then be merged into the main branch, ensuring there 
+        is no merge conflict, then tested on the main branch.
       
       Installation
       
@@ -186,5 +200,3 @@
     
     Enjoy cooking with the Recipe Generator! We hope our platform helps you find inspiration, stay healthy, and enjoy delicious meals. Happy cooking!
 
-
-Need to include: Pre-requisites for incoming SWE's (HTML version, type of language, etc.); clarify the strategy we use to review and finalize code.
