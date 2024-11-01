@@ -1,2 +1,0 @@
-# recipe-generator
-recipe generator
