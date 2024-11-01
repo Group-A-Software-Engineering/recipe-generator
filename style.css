@@ -1,3 +1,6 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 /* Basic CSS reset */
 * {
     margin: 0;
@@ -6,63 +9,268 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     line-height: 1.6;
-    padding: 20px;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #0B3D0B; /* Dark Green */
+    color: #CCCCCC; /* Light Gray */
 }
 
-header {
+/* Header and Footer */
+header, footer {
+    background-color: #082808; /* Darker Green */
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #A8E6A1; /* Light Green */
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+footer p {
+    font-size: 0.9rem;
+    color: #777777;
+}
+
+/* Links */
+a {
+    color: #A8E6A1; /* Light Green */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #B0F2B6; /* Slightly brighter light green */
+}
+
+/* Login Link */
+.login-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #2E2E2E; /* Dark Gray */
+    color: #A8E6A1; /* Light Green */
+    border-radius: 5px;
+    font-weight: 700;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-link:hover {
+    background-color: #3D3D3D; /* Slightly lighter dark gray */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Section Styling */
+section {
+    margin: 40px auto;
+    padding: 20px;
+    max-width: 1200px;
+    background-color: #082808; /* Darker Green */
+    border-radius: 5px;
+}
+
+h2 {
+    color: #A8E6A1; /* Light Green */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h3 {
+    color: #A8E6A1; /* Light Green */
+    margin-bottom: 10px;
+}
+
+p, label {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+label {
+    color: #CCCCCC; /* Light Gray */
+}
+
+/* Search Section */
+#search-section .toggle-container {
     text-align: center;
     margin-bottom: 20px;
 }
 
-h1 {
-    font-size: 2.5rem;
-    color: #333;
+#search-section .input-group,
+#ingredient-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-section {
-    margin-bottom: 20px;
-    padding: 10px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-#search-bar {
+#search-bar,
+.ingredient-input {
     width: 60%;
+    max-width: 500px;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #444444;
+    background-color: #2E2E2E; /* Dark Gray */
+    color: #CCCCCC; /* Light Gray */
     border-radius: 5px;
+    margin: 5px;
 }
 
-button {
+#search-section button,
+#ingredient-search button,
+#toggle-search-mode {
     padding: 10px 15px;
-    background-color: #28a745;
-    color: white;
+    background-color: #2E2E2E; /* Dark Gray */
+    color: #A8E6A1; /* Light Green */
     border: none;
     border-radius: 5px;
+    font-weight: 700;
     cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    margin: 5px;
 }
 
-button:hover {
-    background-color: #218838;
+#search-section button:hover,
+#ingredient-search button:hover,
+#toggle-search-mode:hover {
+    background-color: #3D3D3D; /* Slightly lighter dark gray */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-footer {
+#sorting-options,
+#dietary-filters {
     text-align: center;
     margin-top: 20px;
-    font-size: 0.9rem;
+}
+
+#sorting-options select,
+#diet-select {
+    padding: 10px;
+    border: 1px solid #444444;
+    background-color: #2E2E2E; /* Dark Gray */
+    color: #A8E6A1; /* Light Green */
+    border-radius: 5px;
+}
+
+/* Meal Suggestions */
+#meal-suggestions,
+#favorites-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.recipe {
+    flex: 1 1 calc(30% - 40px);
+    background-color: #1A1A1A; /* Very Dark Gray */
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    max-width: 300px;
 }
 
 .recipe img {
     width: 100%;
     height: auto;
     border-radius: 5px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
 }
 
-.recipe {
-    margin-bottom: 20px;
+.recipe img:hover {
+    transform: scale(1.05);
+}
+
+.recipe h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #A8E6A1; /* Light Green */
+}
+
+.recipe p {
+    font-size: 0.9rem;
+    color: #CCCCCC; /* Light Gray */
+    margin-bottom: 10px;
+}
+
+.recipe button {
+    padding: 10px 15px;
+    background-color: #2E2E2E; /* Dark Gray */
+    color: #A8E6A1; /* Light Green */
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.recipe button:hover {
+    background-color: #3D3D3D; /* Slightly lighter dark gray */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Recipe Details */
+.recipe-details h2 {
+    color: #A8E6A1; /* Light Green */
+    margin-bottom: 15px;
+}
+
+.recipe-details p {
+    color: #CCCCCC; /* Light Gray */
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.recipe-details button {
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #2E2E2E; /* Dark Gray */
+    color: #A8E6A1; /* Light Green */
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.recipe-details button:hover {
+    background-color: #3D3D3D; /* Slightly lighter dark gray */
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .recipe {
+        flex: 1 1 calc(45% - 40px);
+    }
+
+    #search-bar,
+    .ingredient-input {
+        width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    #search-section .input-group,
+    #ingredient-search {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #search-bar,
+    .ingredient-input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    #search-section button {
+        width: 100%;
+    }
+
+    .recipe {
+        flex: 1 1 100%;
+    }
 }
