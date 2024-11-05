@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta description="A Recipe Generator to make meal planning easier for college students and the general population">
+
+    <!-- Title -->
+    <title>Recipe Generator</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome (for icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+    <!-- Your Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Welcome to the Recipe Generator</h1>
+        <p>Find meals that fit your taste, diet, and calorie needs!</p>
+        <a href="login.html" class="login-link">Login</a>
+    </header>
+
+    <!-- Search Section -->
+    <section id="search-section">
+        <h2>Search for Recipes</h2>
+
+        <!-- Toggle Button -->
+        <div class="toggle-container">
+            <button id="toggle-search-mode">Switch to Ingredient Search</button>
+        </div>
+
+        <!-- General Search Bar -->
+        <div id="general-search" class="input-group">
+            <input type="text" id="search-bar" placeholder="Search by keyword or dietary preference">
+            <button onclick="searchRecipes()"><i class="fas fa-search"></i> Search</button>
+        </div>
+
+        <!-- Ingredient Search Bars (Hidden by default) -->
+        <div id="ingredient-search" class="ingredient-inputs" style="display: none;">
+            <div class="ingredient-group">
+                <input type="text" class="ingredient-input" placeholder="Ingredient 1">
+                <input type="text" class="ingredient-input" placeholder="Ingredient 2">
+                <input type="text" class="ingredient-input" placeholder="Ingredient 3">
+                <input type="text" class="ingredient-input" placeholder="Ingredient 4">
+                <input type="text" class="ingredient-input" placeholder="Ingredient 5">
+            </div>
+            <button onclick="searchByIngredients()"><i class="fas fa-search"></i> Search by Ingredients</button>
+        </div>
+
+        <!-- Dietary Filters -->
+        <div id="dietary-filters">
+            <label for="diet-select">Dietary Preferences:</label>
+            <select id="diet-select" multiple>
+                <option value="vegetarian">Vegetarian</option>
+                <option value="vegan">Vegan</option>
+                <option value="gluten free">Gluten Free</option>
+                <option value="ketogenic">Ketogenic</option>
+                <option value="pescatarian">Pescatarian</option>
+            </select>
+        </div>
+
+        <!-- Sorting Options -->
+        <div id="sorting-options">
+            <label for="sort-select">Sort By:</label>
+            <select id="sort-select" onchange="updateSorting()">
+                <option value="">Default</option>
+                <option value="time">Cook Time</option>
+                <option value="popularity">Popularity</option>
+                <option value="healthiness">Healthiness</option>
+                <option value="ingredients">Number of Ingredients</option>
+            </select>
+        </div>
+    </section>
+
+    <!-- Meal Suggestions Section -->
+    <section id="meal-suggestions">
+        <!-- Recipe Cards will be dynamically inserted here -->
+    </section>
+
+    <!-- Favorites Section -->
+    <section id="favorites-section" style="display: none;">
+        <h2>Your Favorites</h2>
+        <div id="favorites-list">
+            <!-- Favorite recipes will be displayed here -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Recipe Generator. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Your Custom JavaScript -->
+    <script src="app.js"></script>
+</body>
+</html>
