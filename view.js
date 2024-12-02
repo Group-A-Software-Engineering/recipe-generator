@@ -133,10 +133,36 @@ const View = (() => {
         return sortedRecipes;
     };
 
+    const updateLoginStatus = (username) => {
+        const loginLink = document.querySelector('.login-link');
+        if (username) {
+            loginLink.textContent = `Welcome, ${username} (Logout)`;
+            loginLink.id = 'logout-link';
+            loginLink.href = '#';
+        } else {
+            loginLink.textContent = 'Login';
+            loginLink.id = '';
+            loginLink.href = 'login.html';
+        }
+    };
+
+    const showSignUp = () => {
+        document.getElementById('login-section').style.display = 'none';
+        document.getElementById('signup-section').style.display = 'block';
+    };
+
+    const showLogin = () => {
+        document.getElementById('signup-section').style.display = 'none';
+        document.getElementById('login-section').style.display = 'block';
+    };
+
     return {
         displayRecipes,
         displayRecipesByIngredients,
         displayRecipeDetails,
         updateFavoritesSection,
+        updateLoginStatus,
+        showSignUp,
+        showLogin,
     };
 })();

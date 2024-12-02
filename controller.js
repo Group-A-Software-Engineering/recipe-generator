@@ -4,13 +4,51 @@ const Controller = (() => {
     let currentSortOption = '';
 
     const init = () => {
-        // Event listeners
-        document.getElementById('toggle-search-mode').addEventListener('click', handleToggleSearchMode);
-        document.getElementById('search-button').addEventListener('click', handleSearch);
-        document.getElementById('ingredient-search-button').addEventListener('click', handleIngredientSearch);
-        document.getElementById('sort-select').addEventListener('change', handleSorting);
-        document.getElementById('meal-suggestions').addEventListener('click', handleMealSuggestionsClick);
-        document.getElementById('favorites-list').addEventListener('click', handleFavoritesClick);
+        // Event listeners for index.html
+        if (document.getElementById('toggle-search-mode')) {
+            document.getElementById('toggle-search-mode').addEventListener('click', handleToggleSearchMode);
+            document.getElementById('search-button').addEventListener('click', handleSearch);
+            document.getElementById('ingredient-search-button').addEventListener('click', handleIngredientSearch);
+            document.getElementById('sort-select').addEventListener('change', handleSorting);
+            document.getElementById('meal-suggestions').addEventListener('click', handleMealSuggestionsClick);
+            document.getElementById('favorites-list').addEventListener('click', handleFavoritesClick);
+        }
+
+        // Event listeners for login and signup forms
+        if (document.getElementById('login-form')) {
+            document.getElementById('login-form').addEventListener('submit', handleLogin);
+        }
+        if (document.getElementById('signup-form')) {
+            document.getElementById('signup-form').addEventListener('submit', handleSignUp);
+        }
+
+        // Event listeners for showing signup and login sections
+        const showSignUpLink = document.getElementById('show-signup');
+        if (showSignUpLink) {
+            showSignUpLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                View.showSignUp();
+            });
+        }
+        const showLoginLink = document.getElementById('show-login');
+        if (showLoginLink) {
+            showLoginLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                View.showLogin();
+            });
+        }
+
+        // Check if user is logged in
+        const currentUser = localStorage.getItem('currentUser');
+        if (currentUser) {
+            View.updateLoginStatus(currentUser);
+        }
+
+        // Add logout event listener
+        const logoutLink = document.getElementById('logout-link');
+        if (logoutLink) {
+            logoutLink.addEventListener('click', handleLogout);
+        }
     };
 
     // Toggle search mode
@@ -166,6 +204,60 @@ const Controller = (() => {
         } else {
             View.updateFavoritesSection([]);
         }
+    };
+
+    // Handle user login
+    const handleLogin = async (event) => {
+        event.preventDefault();
+        const username = document.getElementById('username').value.trim();
+        const password = document.getElementById('password').value;
+
+        if (username === '' || password === '') {
+            alert('Please enter your username and password.');
+            return;
+        }
+
+        const authenticated = await Model.authenticateUser(username, password);
+        if (authenticated) {
+            alert('Login successful!');
+            localStorage.setItem('currentUser', username);
+            window.location.href = 'index.html';
+        } else {
+            alert('Invalid username or password.');
+        }
+    };
+
+    // Handle user signup
+    const handleSignUp = async (event) => {
+        event.preventDefault();
+        const username = document.getElementById('new-username').value.trim();
+        const password = document.getElementById('new-password').value;
+        const confirmPassword = document.getElementById('confirm-password').value;
+
+        if (password !== confirmPassword) {
+            alert('Passwords do not match.');
+            return;
+        }
+
+        if (username === '' || password === '') {
+            alert('Please fill in all fields.');
+            return;
+        }
+
+        try {
+            await Model.registerUser(username, password);
+            alert('Sign-up successful! You can now log in.');
+            View.showLogin();
+        } catch (error) {
+            alert(error.message);
+        }
+    };
+
+    // Handle user logout
+    const handleLogout = () => {
+        localStorage.removeItem('currentUser');
+        alert('Logged out successfully.');
+        View.updateLoginStatus(null);
     };
 
     return {

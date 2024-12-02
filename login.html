@@ -20,22 +20,22 @@
     <!-- Login Section -->
     <section id="login-section">
         <h1>Login</h1>
-        <form id="login-form" action="#" method="post" onsubmit="return false;">
+        <form id="login-form" action="#" method="post">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
 
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
 
-            <button type="submit" onclick="login()">Login</button>
+            <button type="submit">Login</button>
         </form>
-        <p>Don't have an account? <a href="#" onclick="showSignUp()">Sign Up</a></p>
+        <p>Don't have an account? <a href="#" id="show-signup">Sign Up</a></p>
     </section>
 
     <!-- Sign-Up Section (Hidden by default) -->
     <section id="signup-section" style="display: none;">
         <h1>Sign Up</h1>
-        <form id="signup-form" action="#" method="post" onsubmit="return false;">
+        <form id="signup-form" action="#" method="post">
             <label for="new-username">Username:</label>
             <input type="text" id="new-username" name="new-username" required>
 
@@ -45,12 +45,18 @@
             <label for="confirm-password">Confirm Password:</label>
             <input type="password" id="confirm-password" name="confirm-password" required>
 
-            <button type="submit" onclick="signUp()">Sign Up</button>
+            <button type="submit">Sign Up</button>
         </form>
-        <p>Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+        <p>Already have an account? <a href="#" id="show-login">Login</a></p>
     </section>
 
-    <!-- Your Custom JavaScript -->
-    <script src="login.js"></script>
+    <!-- Include necessary scripts -->
+    <script src="model.js"></script>
+    <script src="view.js"></script>
+    <script src="controller.js"></script>
+    <script>
+        // Initialize the controller
+        Controller.init();
+    </script>
 </body>
 </html>

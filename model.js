@@ -53,6 +53,33 @@ const Model = (() => {
     const getCurrentRecipes = () => currentRecipes;
     const getFavoriteRecipes = () => favoriteRecipes;
 
+    // User data storage
+    const registerUser = async (username, password) => {
+        let users = JSON.parse(localStorage.getItem('users')) || {};
+        if (users[username]) {
+            throw new Error('User already exists');
+        }
+        const passwordHash = await hashPassword(password);
+        users[username] = passwordHash;
+        localStorage.setItem('users', JSON.stringify(users));
+    };
+
+    const authenticateUser = async (username, password) => {
+        let users = JSON.parse(localStorage.getItem('users')) || {};
+        const passwordHash = await hashPassword(password);
+        return users[username] && users[username] === passwordHash;
+    };
+
+    // Password hashing function
+    const hashPassword = async (password) => {
+        const encoder = new TextEncoder();
+        const data = encoder.encode(password);
+        const hash = await crypto.subtle.digest('SHA-256', data);
+        const hashArray = Array.from(new Uint8Array(hash));
+        const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+        return hashHex;
+    };
+
     return {
         fetchRecipes,
         fetchRecipesByIngredients,
@@ -61,5 +88,7 @@ const Model = (() => {
         removeFromFavorites,
         getCurrentRecipes,
         getFavoriteRecipes,
+        registerUser,
+        authenticateUser,
     };
 })();
