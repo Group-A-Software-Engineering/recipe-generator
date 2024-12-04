@@ -1,6 +1,6 @@
 // model.js
 
-const apiKey = '32f55694f3244f7c95847b4f9e20c743';
+const apiKey = '86cf816133634503a620bfab3fbd7463';
 const baseUrl = 'https://api.spoonacular.com/recipes';
 
 // The Model module handles data operations and business logic.
