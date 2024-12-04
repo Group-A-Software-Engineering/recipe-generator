@@ -1,19 +1,23 @@
 // view.js
 
+// The View module handles updating the user interface.
 const View = (() => {
     const mealSuggestionsSection = document.getElementById('meal-suggestions');
     const favoritesSection = document.getElementById('favorites-section');
     const favoritesList = document.getElementById('favorites-list');
 
-    // Clear results
+    // Clear the meal suggestions section.
     const clearResults = () => {
         mealSuggestionsSection.innerHTML = '';
     };
 
-    // Display recipes
+    // Display recipes in the meal suggestions section.
     const displayRecipes = (recipes, sortOption) => {
+        // Clear existing results.
         clearResults();
+        // Sort recipes based on the selected option.
         recipes = sortRecipes(recipes, sortOption);
+        // Iterate over each recipe and create HTML elements.
         recipes.forEach(recipe => {
             const recipeElement = document.createElement('div');
             recipeElement.classList.add('recipe');
@@ -25,14 +29,18 @@ const View = (() => {
                 <button data-id="${recipe.id}" class="view-recipe-button">View Recipe</button>
                 <button data-id="${recipe.id}" class="save-recipe-button">Save Recipe</button>
             `;
+            // Append the recipe element to the meal suggestions section.
             mealSuggestionsSection.appendChild(recipeElement);
         });
     };
 
-    // Display recipes by ingredients
+    // Display recipes based on ingredients.
     const displayRecipesByIngredients = (recipes, sortOption) => {
+        // Clear existing results.
         clearResults();
+        // Sort recipes based on the selected option.
         recipes = sortRecipes(recipes, sortOption);
+        // Iterate over each recipe and create HTML elements.
         recipes.forEach(recipe => {
             const recipeElement = document.createElement('div');
             recipeElement.classList.add('recipe');
@@ -44,22 +52,25 @@ const View = (() => {
                 <button data-id="${recipe.id}" class="view-recipe-button">View Recipe</button>
                 <button data-id="${recipe.id}" class="save-recipe-button">Save Recipe</button>
             `;
+            // Append the recipe element to the meal suggestions section.
             mealSuggestionsSection.appendChild(recipeElement);
         });
     };
 
-    // Display recipe details
+    // Display detailed information about a recipe.
     const displayRecipeDetails = (recipe) => {
+        // Clear existing results.
         clearResults();
-        // Extract nutrients
+        // Extract nutritional information.
         const nutrients = recipe.nutrition.nutrients;
         const calories = nutrients.find(n => n.name === 'Calories');
         const protein = nutrients.find(n => n.name === 'Protein');
         const fat = nutrients.find(n => n.name === 'Fat');
         const carbs = nutrients.find(n => n.name === 'Carbohydrates');
 
-        // Ingredients and instructions
+        // Create ingredients list.
         const ingredientsList = recipe.extendedIngredients.map(ingredient => `<li>${ingredient.original}</li>`).join('');
+        // Create instructions list.
         let instructions = '';
         if (recipe.analyzedInstructions && recipe.analyzedInstructions.length > 0) {
             instructions = recipe.analyzedInstructions[0].steps.map(step => `<li>${step.step}</li>`).join('');
@@ -67,7 +78,7 @@ const View = (() => {
             instructions = '<p>No instructions available.</p>';
         }
 
-        // Render details
+        // Render the recipe details.
         mealSuggestionsSection.innerHTML = `
             <div class="recipe-details">
                 <h2>${recipe.title}</h2>
@@ -86,11 +97,13 @@ const View = (() => {
         `;
     };
 
-    // Update favorites section
+    // Update the favorites section with the list of favorite recipes.
     const updateFavoritesSection = (favorites) => {
         if (favorites.length > 0) {
+            // Show the favorites section.
             favoritesSection.style.display = 'block';
             favoritesList.innerHTML = '';
+            // Iterate over each favorite recipe and create HTML elements.
             favorites.forEach(recipe => {
                 const recipeElement = document.createElement('div');
                 recipeElement.classList.add('recipe');
@@ -100,14 +113,16 @@ const View = (() => {
                     <button data-id="${recipe.id}" class="view-recipe-button">View Recipe</button>
                     <button data-id="${recipe.id}" class="remove-recipe-button">Remove</button>
                 `;
+                // Append the recipe element to the favorites list.
                 favoritesList.appendChild(recipeElement);
             });
         } else {
+            // Hide the favorites section if there are no favorites.
             favoritesSection.style.display = 'none';
         }
     };
 
-    // Sort recipes
+    // Sort recipes based on the selected sort option.
     const sortRecipes = (recipes, sortOption) => {
         let sortedRecipes = [...recipes];
         switch (sortOption) {
@@ -133,24 +148,29 @@ const View = (() => {
         return sortedRecipes;
     };
 
+    // Update the login status in the header.
     const updateLoginStatus = (username) => {
         const loginLink = document.querySelector('.login-link');
         if (username) {
+            // If user is logged in, display the username and logout option.
             loginLink.textContent = `Welcome, ${username} (Logout)`;
             loginLink.id = 'logout-link';
             loginLink.href = '#';
         } else {
+            // If no user is logged in, display the login link.
             loginLink.textContent = 'Login';
             loginLink.id = '';
             loginLink.href = 'login.html';
         }
     };
 
+    // Show the signup form and hide the login form.
     const showSignUp = () => {
         document.getElementById('login-section').style.display = 'none';
         document.getElementById('signup-section').style.display = 'block';
     };
 
+    // Show the login form and hide the signup form.
     const showLogin = () => {
         document.getElementById('signup-section').style.display = 'none';
         document.getElementById('login-section').style.display = 'block';
